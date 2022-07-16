@@ -1,11 +1,10 @@
 package com.example.tranningalo1.CallAPI
 
-import com.example.tranningalo1.model.Wall
+import com.example.tranningalo1.model.WallRespone
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
-import retrofit2.http.Header
 import retrofit2.http.Headers
 
 interface RetrofitService {
@@ -24,6 +23,6 @@ interface RetrofitService {
         }
     }
     @Headers("language: vi", "country:VN")
-    @GET("/api/wallpapers/images/only?imagePageNumber=1&api_key=%2Fapi%2Fwallpapers%2Fimages%2Fonly")
-    fun getAllWall() : Call<List<Wall>>
+    @GET("/api/wallpapers?imagePageNumber=1&videoPageNumber=1")
+    fun getAllWall() : Call<WallRespone>
 }
